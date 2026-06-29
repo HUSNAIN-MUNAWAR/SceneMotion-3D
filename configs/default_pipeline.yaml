@@ -1,0 +1,11 @@
+target_fps: 4
+max_frames: 120
+resize_width: 800
+keyframe_interval: 2
+max_keyframes: 16
+feature_method: ORB
+max_features: 2000
+match_ratio: 0.82
+min_inlier_ratio: 0.15
+depth_provider: fallback
+dense_stride: 8

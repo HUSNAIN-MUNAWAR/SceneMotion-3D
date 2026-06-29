@@ -1,0 +1,3 @@
+# Voiceover Script
+
+SceneMotion-3D is a core computer vision platform for monocular visual odometry and 3D reconstruction. It extracts frames, selects keyframes, matches features, estimates relative motion with the essential matrix and recoverPose, triangulates sparse points, creates depth-assisted point clouds, and generates reports and artifact bundles. The important part is that it does not hide limitations: monocular scale is relative by default, fallback depth is not metric, and poor videos are flagged with warnings. Benchmark mode compares estimated and ground-truth trajectories using ATE and RPE with Sim(3) alignment for evaluation only.

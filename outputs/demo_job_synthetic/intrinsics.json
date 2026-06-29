@@ -1,0 +1,10 @@
+{
+  "fx": 768.0,
+  "fy": 768.0,
+  "cx": 320.0,
+  "cy": 210.0,
+  "width": 640,
+  "height": 420,
+  "source": "estimated",
+  "warning": "Approximate intrinsics affect motion, triangulation, and cloud quality."
+}

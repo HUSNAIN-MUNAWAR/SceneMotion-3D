@@ -1,0 +1,57 @@
+<!doctype html>
+<html><head><meta charset='utf-8'><title>SceneMotion 3D Report</title>
+<style>body{font-family:Inter,Arial,sans-serif;margin:40px;background:#0f172a;color:#e5e7eb}.card{background:#111827;border:1px solid #334155;border-radius:16px;padding:24px;box-shadow:0 10px 30px #0004}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #334155;text-align:left;padding:10px;vertical-align:top}th{width:320px;color:#bfdbfe}pre{white-space:pre-wrap;margin:0;color:#e5e7eb}.warn{background:#451a03;border:1px solid #fed7aa;border-radius:12px;padding:16px}.note{background:#172554;border:1px solid #60a5fa;border-radius:12px;padding:16px}</style>
+</head><body><div class='card'><h1>SceneMotion 3D Reconstruction Report</h1>
+<div class='note'><b>Scale disclaimer:</b> SceneMotion-3D estimates relative monocular trajectory by default. Absolute metric scale requires additional information such as known camera intrinsics, known object size, known camera height, stereo baseline, depth sensor, IMU, or ground-truth alignment for evaluation. Fallback pseudo-depth is provided for offline demonstration only and must not be interpreted as metric depth.</div>
+<h2>Metrics</h2><table><tr><th>video_path</th><td><pre>/mnt/data/SceneMotion-3D/sample_data/videos/synthetic_scene.mp4</pre></td></tr>
+<tr><th>number_of_frames</th><td><pre>48</pre></td></tr>
+<tr><th>extracted_frames</th><td><pre>16</pre></td></tr>
+<tr><th>selected_keyframes</th><td><pre>8</pre></td></tr>
+<tr><th>average_keypoints_per_keyframe</th><td><pre>1638.125</pre></td></tr>
+<tr><th>average_matches_per_pair</th><td><pre>532.5714285714286</pre></td></tr>
+<tr><th>average_inlier_ratio</th><td><pre>0.6680122740205736</pre></td></tr>
+<tr><th>valid_pose_pairs</th><td><pre>7</pre></td></tr>
+<tr><th>rejected_pose_pairs</th><td><pre>0</pre></td></tr>
+<tr><th>sparse_3d_point_count</th><td><pre>3371</pre></td></tr>
+<tr><th>mean_reprojection_error</th><td><pre>0.0</pre></td></tr>
+<tr><th>max_reprojection_error</th><td><pre>0.0</pre></td></tr>
+<tr><th>trajectory_length_relative_units</th><td><pre>7.0</pre></td></tr>
+<tr><th>depth_maps_generated</th><td><pre>4</pre></td></tr>
+<tr><th>dense_cloud_point_count</th><td><pre>4240</pre></td></tr>
+<tr><th>depth_provider</th><td><pre>fallback_pseudo_depth</pre></td></tr>
+<tr><th>intrinsics_source</th><td><pre>estimated</pre></td></tr>
+<tr><th>scale_note</th><td><pre>Relative monocular units only; no metric scale claimed.</pre></td></tr>
+<tr><th>bundle_adjustment_note</th><td><pre>Includes lightweight local refinement plus optional small-window BA modules; not a replacement for mature SfM systems like COLMAP.</pre></td></tr>
+<tr><th>scale_mode</th><td><pre>relative</pre></td></tr>
+<tr><th>scale_source</th><td><pre>monocular_relative_units</pre></td></tr>
+<tr><th>scale_factor</th><td><pre>1.0</pre></td></tr>
+<tr><th>scale_confidence</th><td><pre>0.3</pre></td></tr>
+<tr><th>rejected_pairs_total</th><td><pre>0</pre></td></tr>
+<tr><th>rejected_low_matches</th><td><pre>0</pre></td></tr>
+<tr><th>rejected_low_parallax</th><td><pre>0</pre></td></tr>
+<tr><th>rejected_blur</th><td><pre>0</pre></td></tr>
+<tr><th>rejected_dynamic_scene</th><td><pre>0</pre></td></tr>
+<tr><th>rejected_degenerate_motion</th><td><pre>0</pre></td></tr>
+<tr><th>loop_candidates</th><td><pre>4</pre></td></tr>
+<tr><th>loop_candidates_verified</th><td><pre>4</pre></td></tr>
+<tr><th>timing_profile</th><td><pre>{
+  &quot;frame_extraction_time&quot;: 0.149016,
+  &quot;keyframe_selection_time&quot;: 0.485727,
+  &quot;feature_extraction_time&quot;: 0.163268,
+  &quot;matching_time&quot;: 2.189775,
+  &quot;pose_estimation_time&quot;: 0.576971,
+  &quot;triangulation_time&quot;: 0.09645,
+  &quot;depth_estimation_time&quot;: 0.25363,
+  &quot;point_cloud_export_time&quot;: 0.098169
+}</pre></td></tr>
+<tr><th>quality_narrative</th><td><pre>{
+  &quot;reconstruction_quality_grade&quot;: &quot;strong&quot;,
+  &quot;tracking_stability&quot;: 0.6680122740205736,
+  &quot;scale_mode&quot;: &quot;relative&quot;,
+  &quot;likely_failure_reasons&quot;: [],
+  &quot;recommended_fixes&quot;: [
+    &quot;Avoid pure rotation; add translation/parallax.&quot;,
+    &quot;Provide a camera calibration JSON.&quot;,
+    &quot;Use known scale reference, RGB-D, stereo, or IMU for metric scale.&quot;
+  ]
+}</pre></td></tr></table><h2>Warnings and Limitations</h2><div class='warn'><ul><li>Camera intrinsics are approximate. Use calibration JSON for better geometry.</li><li>Monocular trajectory uses relative scale only unless external scale is provided.</li><li>Offline-safe pseudo-depth fallback; not metric depth.</li></ul></div><h2>Recommended Fixes</h2><ul><li>Avoid pure rotation; add translation/parallax.</li><li>Provide a camera calibration JSON.</li><li>Use known scale reference, RGB-D, stereo, or IMU for metric scale.</li></ul></div></body></html>

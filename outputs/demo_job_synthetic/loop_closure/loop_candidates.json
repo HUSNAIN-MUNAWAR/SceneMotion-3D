@@ -1,0 +1,47 @@
+{
+  "candidate_count": 4,
+  "verified_count": 4,
+  "candidates": [
+    {
+      "query_frame": 4,
+      "candidate_frame": 0,
+      "similarity": 0.9936360917248528,
+      "verified": true,
+      "reason": "ok",
+      "inliers": 296,
+      "raw_matches": 443,
+      "inlier_ratio": 0.6681715575620768
+    },
+    {
+      "query_frame": 5,
+      "candidate_frame": 1,
+      "similarity": 0.998710920005536,
+      "verified": true,
+      "reason": "ok",
+      "inliers": 331,
+      "raw_matches": 526,
+      "inlier_ratio": 0.629277566539924
+    },
+    {
+      "query_frame": 6,
+      "candidate_frame": 2,
+      "similarity": 0.9991531071757928,
+      "verified": true,
+      "reason": "ok",
+      "inliers": 421,
+      "raw_matches": 584,
+      "inlier_ratio": 0.7208904109589042
+    },
+    {
+      "query_frame": 7,
+      "candidate_frame": 2,
+      "similarity": 0.9987142692142693,
+      "verified": true,
+      "reason": "ok",
+      "inliers": 377,
+      "raw_matches": 549,
+      "inlier_ratio": 0.6867030965391621
+    }
+  ],
+  "note": "Lightweight candidate detection only; this is not a full loop-closure SLAM backend."
+}

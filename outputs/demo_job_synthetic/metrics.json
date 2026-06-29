@@ -1,0 +1,59 @@
+{
+  "video_path": "/mnt/data/SceneMotion-3D/sample_data/videos/synthetic_scene.mp4",
+  "number_of_frames": 48,
+  "extracted_frames": 16,
+  "selected_keyframes": 8,
+  "average_keypoints_per_keyframe": 1638.125,
+  "average_matches_per_pair": 532.5714285714286,
+  "average_inlier_ratio": 0.6680122740205736,
+  "valid_pose_pairs": 7,
+  "rejected_pose_pairs": 0,
+  "sparse_3d_point_count": 3371,
+  "mean_reprojection_error": 0.0,
+  "max_reprojection_error": 0.0,
+  "trajectory_length_relative_units": 7.0,
+  "depth_maps_generated": 4,
+  "dense_cloud_point_count": 4240,
+  "depth_provider": "fallback_pseudo_depth",
+  "intrinsics_source": "estimated",
+  "scale_note": "Relative monocular units only; no metric scale claimed.",
+  "bundle_adjustment_note": "Includes lightweight local refinement plus optional small-window BA modules; not a replacement for mature SfM systems like COLMAP.",
+  "scale_mode": "relative",
+  "scale_source": "monocular_relative_units",
+  "scale_factor": 1.0,
+  "scale_confidence": 0.3,
+  "rejected_pairs_total": 0,
+  "rejected_low_matches": 0,
+  "rejected_low_parallax": 0,
+  "rejected_blur": 0,
+  "rejected_dynamic_scene": 0,
+  "rejected_degenerate_motion": 0,
+  "loop_candidates": 4,
+  "loop_candidates_verified": 4,
+  "timing_profile": {
+    "frame_extraction_time": 0.149016,
+    "keyframe_selection_time": 0.485727,
+    "feature_extraction_time": 0.163268,
+    "matching_time": 2.189775,
+    "pose_estimation_time": 0.576971,
+    "triangulation_time": 0.09645,
+    "depth_estimation_time": 0.25363,
+    "point_cloud_export_time": 0.098169,
+    "report_generation_time": 0.030998
+  },
+  "quality_narrative": {
+    "reconstruction_quality_grade": "strong",
+    "tracking_stability": 0.6680122740205736,
+    "scale_mode": "relative",
+    "likely_failure_reasons": [],
+    "recommended_fixes": [
+      "Avoid pure rotation; add translation/parallax.",
+      "Provide a camera calibration JSON.",
+      "Use known scale reference, RGB-D, stereo, or IMU for metric scale."
+    ]
+  },
+  "warnings": [
+    "Camera intrinsics are approximate. Use calibration JSON for better geometry.",
+    "Monocular trajectory uses relative scale only unless external scale is provided."
+  ]
+}

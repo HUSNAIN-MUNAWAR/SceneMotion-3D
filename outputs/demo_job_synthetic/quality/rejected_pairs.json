@@ -1,0 +1,304 @@
+{
+  "pairs": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "accepted": true,
+      "reasons": [],
+      "blur_a": {
+        "is_blurry": false,
+        "sharpness": 2017.9125148809524,
+        "threshold": 45.0
+      },
+      "blur_b": {
+        "is_blurry": false,
+        "sharpness": 2003.938162202381,
+        "threshold": 45.0
+      },
+      "parallax": {
+        "median_flow": 13.04802131652832,
+        "mean_flow": 10.092902183532715,
+        "tracked_points": 228,
+        "insufficient_parallax": false,
+        "threshold_px": 1.2
+      },
+      "dynamic": {
+        "dynamic_warning": false,
+        "reason": "ok",
+        "median_flow": 13.04802131652832,
+        "mean_flow": 10.092902183532715,
+        "tracked_points": 228
+      },
+      "match_metrics": {
+        "pair": [
+          0,
+          1
+        ],
+        "raw_matches": 578,
+        "filtered_matches": 429,
+        "inlier_count": 429,
+        "inlier_ratio": 0.7422145328719724
+      }
+    },
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "accepted": true,
+      "reasons": [],
+      "blur_a": {
+        "is_blurry": false,
+        "sharpness": 2003.938162202381,
+        "threshold": 45.0
+      },
+      "blur_b": {
+        "is_blurry": false,
+        "sharpness": 1981.6590476190477,
+        "threshold": 45.0
+      },
+      "parallax": {
+        "median_flow": 11.157764434814453,
+        "mean_flow": 8.63117504119873,
+        "tracked_points": 228,
+        "insufficient_parallax": false,
+        "threshold_px": 1.2
+      },
+      "dynamic": {
+        "dynamic_warning": false,
+        "reason": "ok",
+        "median_flow": 11.157764434814453,
+        "mean_flow": 8.63117504119873,
+        "tracked_points": 228
+      },
+      "match_metrics": {
+        "pair": [
+          1,
+          2
+        ],
+        "raw_matches": 820,
+        "filtered_matches": 518,
+        "inlier_count": 518,
+        "inlier_ratio": 0.6317073170731707
+      }
+    },
+    {
+      "pair": [
+        2,
+        3
+      ],
+      "accepted": true,
+      "reasons": [],
+      "blur_a": {
+        "is_blurry": false,
+        "sharpness": 1981.6590476190477,
+        "threshold": 45.0
+      },
+      "blur_b": {
+        "is_blurry": false,
+        "sharpness": 1971.3424702380953,
+        "threshold": 45.0
+      },
+      "parallax": {
+        "median_flow": 13.693353652954102,
+        "mean_flow": 10.603606224060059,
+        "tracked_points": 227,
+        "insufficient_parallax": false,
+        "threshold_px": 1.2
+      },
+      "dynamic": {
+        "dynamic_warning": false,
+        "reason": "ok",
+        "median_flow": 13.693353652954102,
+        "mean_flow": 10.603606224060059,
+        "tracked_points": 227
+      },
+      "match_metrics": {
+        "pair": [
+          2,
+          3
+        ],
+        "raw_matches": 871,
+        "filtered_matches": 576,
+        "inlier_count": 576,
+        "inlier_ratio": 0.661308840413318
+      }
+    },
+    {
+      "pair": [
+        3,
+        4
+      ],
+      "accepted": true,
+      "reasons": [],
+      "blur_a": {
+        "is_blurry": false,
+        "sharpness": 1971.3424702380953,
+        "threshold": 45.0
+      },
+      "blur_b": {
+        "is_blurry": false,
+        "sharpness": 1994.214650297619,
+        "threshold": 45.0
+      },
+      "parallax": {
+        "median_flow": 11.345356941223145,
+        "mean_flow": 8.921977043151855,
+        "tracked_points": 225,
+        "insufficient_parallax": false,
+        "threshold_px": 1.2
+      },
+      "dynamic": {
+        "dynamic_warning": false,
+        "reason": "ok",
+        "median_flow": 11.345356941223145,
+        "mean_flow": 8.921977043151855,
+        "tracked_points": 225
+      },
+      "match_metrics": {
+        "pair": [
+          3,
+          4
+        ],
+        "raw_matches": 806,
+        "filtered_matches": 506,
+        "inlier_count": 506,
+        "inlier_ratio": 0.6277915632754343
+      }
+    },
+    {
+      "pair": [
+        4,
+        5
+      ],
+      "accepted": true,
+      "reasons": [],
+      "blur_a": {
+        "is_blurry": false,
+        "sharpness": 1994.214650297619,
+        "threshold": 45.0
+      },
+      "blur_b": {
+        "is_blurry": false,
+        "sharpness": 1984.1283049309623,
+        "threshold": 45.0
+      },
+      "parallax": {
+        "median_flow": 12.246683120727539,
+        "mean_flow": 9.485014915466309,
+        "tracked_points": 226,
+        "insufficient_parallax": false,
+        "threshold_px": 1.2
+      },
+      "dynamic": {
+        "dynamic_warning": false,
+        "reason": "ok",
+        "median_flow": 12.246683120727539,
+        "mean_flow": 9.485014915466309,
+        "tracked_points": 226
+      },
+      "match_metrics": {
+        "pair": [
+          4,
+          5
+        ],
+        "raw_matches": 839,
+        "filtered_matches": 550,
+        "inlier_count": 550,
+        "inlier_ratio": 0.6555423122765197
+      }
+    },
+    {
+      "pair": [
+        5,
+        6
+      ],
+      "accepted": true,
+      "reasons": [],
+      "blur_a": {
+        "is_blurry": false,
+        "sharpness": 1984.1283049309623,
+        "threshold": 45.0
+      },
+      "blur_b": {
+        "is_blurry": false,
+        "sharpness": 1968.623303544634,
+        "threshold": 45.0
+      },
+      "parallax": {
+        "median_flow": 13.614683151245117,
+        "mean_flow": 10.226545333862305,
+        "tracked_points": 226,
+        "insufficient_parallax": false,
+        "threshold_px": 1.2
+      },
+      "dynamic": {
+        "dynamic_warning": false,
+        "reason": "ok",
+        "median_flow": 13.614683151245117,
+        "mean_flow": 10.226545333862305,
+        "tracked_points": 226
+      },
+      "match_metrics": {
+        "pair": [
+          5,
+          6
+        ],
+        "raw_matches": 836,
+        "filtered_matches": 545,
+        "inlier_count": 545,
+        "inlier_ratio": 0.6519138755980861
+      }
+    },
+    {
+      "pair": [
+        6,
+        7
+      ],
+      "accepted": true,
+      "reasons": [],
+      "blur_a": {
+        "is_blurry": false,
+        "sharpness": 1968.623303544634,
+        "threshold": 45.0
+      },
+      "blur_b": {
+        "is_blurry": false,
+        "sharpness": 1934.446038286551,
+        "threshold": 45.0
+      },
+      "parallax": {
+        "median_flow": 11.01262378692627,
+        "mean_flow": 8.517251014709473,
+        "tracked_points": 223,
+        "insufficient_parallax": false,
+        "threshold_px": 1.2
+      },
+      "dynamic": {
+        "dynamic_warning": false,
+        "reason": "ok",
+        "median_flow": 11.01262378692627,
+        "mean_flow": 8.517251014709473,
+        "tracked_points": 223
+      },
+      "match_metrics": {
+        "pair": [
+          6,
+          7
+        ],
+        "raw_matches": 856,
+        "filtered_matches": 604,
+        "inlier_count": 604,
+        "inlier_ratio": 0.705607476635514
+      }
+    }
+  ],
+  "rejected_pairs_total": 0,
+  "rejected_blur": 0,
+  "rejected_low_parallax": 0,
+  "rejected_low_matches": 0,
+  "rejected_dynamic_scene": 0,
+  "rejected_degenerate_motion": 0
+}

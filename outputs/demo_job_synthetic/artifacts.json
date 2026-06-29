@@ -1,0 +1,31 @@
+{
+  "job_output_dir": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic",
+  "metrics": "metrics.json",
+  "trajectory": "trajectory.json",
+  "reports": [
+    "report.html",
+    "report.pdf"
+  ],
+  "pointclouds": [
+    "pointclouds/sparse_cloud.ply",
+    "pointclouds/dense_cloud.ply"
+  ],
+  "depth_maps": [
+    "depth/depth_0000.png",
+    "depth/depth_0001.png",
+    "depth/depth_0002.png",
+    "depth/depth_0003.png"
+  ],
+  "match_visualizations": [
+    "matches/matches_0000_0001.jpg",
+    "matches/matches_0001_0002.jpg",
+    "matches/matches_0002_0003.jpg",
+    "matches/matches_0003_0004.jpg",
+    "matches/matches_0004_0005.jpg",
+    "matches/matches_0005_0006.jpg",
+    "matches/matches_0006_0007.jpg"
+  ],
+  "quality_report": "quality/rejected_pairs.json",
+  "loop_candidates": "loop_closure/loop_candidates.json",
+  "bundle": "artifact_bundle.zip"
+}

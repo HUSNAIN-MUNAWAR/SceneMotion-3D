@@ -1,0 +1,76 @@
+{
+  "pairs": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "raw_matches": 578,
+      "filtered_matches": 429,
+      "inlier_count": 429,
+      "inlier_ratio": 0.7422145328719724
+    },
+    {
+      "pair": [
+        1,
+        2
+      ],
+      "raw_matches": 820,
+      "filtered_matches": 518,
+      "inlier_count": 518,
+      "inlier_ratio": 0.6317073170731707
+    },
+    {
+      "pair": [
+        2,
+        3
+      ],
+      "raw_matches": 871,
+      "filtered_matches": 576,
+      "inlier_count": 576,
+      "inlier_ratio": 0.661308840413318
+    },
+    {
+      "pair": [
+        3,
+        4
+      ],
+      "raw_matches": 806,
+      "filtered_matches": 506,
+      "inlier_count": 506,
+      "inlier_ratio": 0.6277915632754343
+    },
+    {
+      "pair": [
+        4,
+        5
+      ],
+      "raw_matches": 839,
+      "filtered_matches": 550,
+      "inlier_count": 550,
+      "inlier_ratio": 0.6555423122765197
+    },
+    {
+      "pair": [
+        5,
+        6
+      ],
+      "raw_matches": 836,
+      "filtered_matches": 545,
+      "inlier_count": 545,
+      "inlier_ratio": 0.6519138755980861
+    },
+    {
+      "pair": [
+        6,
+        7
+      ],
+      "raw_matches": 856,
+      "filtered_matches": 604,
+      "inlier_count": 604,
+      "inlier_ratio": 0.705607476635514
+    }
+  ],
+  "average_inlier_ratio": 0.6680122740205736,
+  "average_matches": 532.5714285714286
+}

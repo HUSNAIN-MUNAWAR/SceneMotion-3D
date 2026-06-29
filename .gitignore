@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+node_modules/
+.next/
+dist/
+build/
+outputs/*
+!outputs/demo_job*/
+.DS_Store
+.pytest_cache/
+.coverage
+
+frontend/tsconfig.tsbuildinfo
+*.tsbuildinfo
+artifact_bundle.zip

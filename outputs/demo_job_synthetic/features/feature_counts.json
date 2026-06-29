@@ -1,0 +1,56 @@
+{
+  "method": "ORB",
+  "features": [
+    {
+      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0000.jpg",
+      "npz": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/features/features_0000.npz",
+      "keypoint_count": 1696
+    },
+    {
+      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0001.jpg",
+      "npz": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/features/features_0001.npz",
+      "keypoint_count": 1692
+    },
+    {
+      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0002.jpg",
+      "npz": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/features/features_0002.npz",
+      "keypoint_count": 1663
+    },
+    {
+      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0003.jpg",
+      "npz": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/features/features_0003.npz",
+      "keypoint_count": 1662
+    },
+    {
+      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0004.jpg",
+      "npz": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/features/features_0004.npz",
+      "keypoint_count": 1633
+    },
+    {
+      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0005.jpg",
+      "npz": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/features/features_0005.npz",
+      "keypoint_count": 1610
+    },
+    {
+      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0006.jpg",
+      "npz": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/features/features_0006.npz",
+      "keypoint_count": 1585
+    },
+    {
+      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0007.jpg",
+      "npz": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/features/features_0007.npz",
+      "keypoint_count": 1564
+    }
+  ],
+  "counts": [
+    1696,
+    1692,
+    1663,
+    1662,
+    1633,
+    1610,
+    1585,
+    1564
+  ],
+  "average_keypoints": 1638.125
+}

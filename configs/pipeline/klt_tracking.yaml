@@ -1,0 +1,7 @@
+name: klt_tracking
+feature_method: ORB
+matcher: BFMatcher
+ratio: 0.82
+cross_check: false
+tracking: KLT
+max_features: 1500

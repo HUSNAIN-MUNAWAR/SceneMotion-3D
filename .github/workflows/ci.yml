@@ -1,0 +1,25 @@
+name: SceneMotion CI
+on: [push, pull_request]
+jobs:
+  backend-and-demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - run: python -m pip install --upgrade pip
+      - run: pip install -r backend/requirements.txt
+      - run: python -m compileall backend vision_core workers scripts
+      - run: pytest tests -q
+      - run: make demo
+      - run: make benchmark-demo
+      - run: make bundle-demo
+  frontend-static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: '20'}
+      - run: cd frontend && npm install
+      - run: cd frontend && npm run typecheck
+      - run: cd frontend && npm run build

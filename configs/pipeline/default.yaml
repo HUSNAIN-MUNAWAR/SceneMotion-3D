@@ -1,0 +1,7 @@
+name: default
+feature_method: ORB
+matcher: BFMatcher
+ratio: 0.82
+cross_check: false
+tracking: null
+max_features: 2000
