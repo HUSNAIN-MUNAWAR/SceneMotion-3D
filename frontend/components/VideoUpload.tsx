@@ -1,9 +1,9 @@
 'use client';
-import { useState } from 'react';
+import { useState, type ChangeEvent } from 'react';
 import { API_BASE } from '@/lib/api';
 export default function VideoUpload() {
   const [status, setStatus] = useState('Choose an MP4/MOV/AVI/MKV file under the configured upload limit.');
-  async function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+  async function onChange(e: ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
     const form = new FormData(); form.append('file', file);
