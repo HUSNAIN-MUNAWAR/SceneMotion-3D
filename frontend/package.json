@@ -9,11 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/three": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest",
-    "three": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "latest",

@@ -2,12 +2,30 @@
 
 Screenshot assets live under `docs/screenshots/`.
 
-They are generated UI preview assets by default. This fallback is intentional so the repository can produce documentation evidence even when browser automation is unavailable.
+They are now generated from the **real** `outputs/demo_job_synthetic` artifacts rather than generic placeholder cards.
 
-Run:
+The generator reads:
+
+- `metrics.json`
+- `trajectory.json`
+- `pointclouds/sparse_cloud.json`
+- `matches/*.jpg`
+- `depth/*.png`
+- artifact metadata from `artifacts.json`
+
+Regenerate them with:
 
 ```bash
-make screenshots
+python scripts/generate_screenshots.py
 ```
 
-Required previews include landing page, upload, processing, dashboard, feature matches, depth explorer, point cloud viewer, benchmark report, run comparison, PDF report preview, and artifact bundle.
+Primary outputs include:
+
+- `landing_page.png`
+- `upload_page.png`
+- `processing_page.png`
+- `reconstruction_dashboard.png`
+- `feature_matches.png`
+- `depth_explorer.png`
+- `pointcloud_viewer.png`
+- `benchmark_report.png`

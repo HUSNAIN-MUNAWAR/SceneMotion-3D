@@ -6,6 +6,7 @@ from backend.app.api.jobs_api import router as jobs_router
 from backend.app.api.artifacts_api import router as artifacts_router
 from backend.app.api.experiments_api import router as experiments_router
 from backend.app.api.config_api import router as config_router
+from backend.app.services.demo_runs import hydrate_completed_runs
 
 settings = get_settings()
 app = FastAPI(title="SceneMotion 3D API", version="0.1.0")
@@ -28,3 +29,4 @@ app.include_router(artifacts_router)
 
 app.include_router(experiments_router)
 app.include_router(config_router)
+hydrate_completed_runs()

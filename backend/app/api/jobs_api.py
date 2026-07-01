@@ -1,4 +1,5 @@
 import asyncio
+import json
 from fastapi import APIRouter, HTTPException, WebSocket, WebSocketDisconnect
 from backend.app.schemas.jobs import JobStartRequest, JobStatus
 from backend.app.services.job_service import create_job_for_video, get_sample_path
@@ -36,7 +37,7 @@ def get_metrics(job_id: str):
         return job.metrics
     metrics_path = job.output_dir / "metrics.json"
     if metrics_path.exists():
-        return metrics_path.read_text()
+        return json.loads(metrics_path.read_text())
     raise HTTPException(status_code=404, detail="Metrics not ready")
 
 @router.websocket("/{job_id}/stream")
