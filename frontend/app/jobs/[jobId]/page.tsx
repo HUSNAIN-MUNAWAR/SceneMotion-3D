@@ -9,7 +9,7 @@ import MetricsCards from '@/components/MetricsCards';
 import PipelineStageStepper from '@/components/PipelineStageStepper';
 import PointCloudViewer from '@/components/PointCloudViewer';
 import WarningPanel from '@/components/WarningPanel';
-import { API_BASE, getJob, getMetrics } from '@/lib/api';
+import { API_BASE, getJob, getMetrics, type JobMetrics, type JobState } from '@/lib/api';
 
 const demoLinks = [
   { href: '/matches', label: 'Feature matches' },
@@ -20,8 +20,8 @@ const demoLinks = [
 
 export default function JobPage({ params }: { params: Promise<{ jobId: string }> }) {
   const { jobId } = use(params);
-  const [job, setJob] = useState<any>(null);
-  const [metrics, setMetrics] = useState<any>(null);
+  const [job, setJob] = useState<JobState | null>(null);
+  const [metrics, setMetrics] = useState<JobMetrics | null>(null);
 
   useEffect(() => {
     const id = setInterval(async () => {

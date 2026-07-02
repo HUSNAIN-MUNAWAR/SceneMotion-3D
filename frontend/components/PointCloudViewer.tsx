@@ -1,13 +1,8 @@
 'use client';
 
-type PointCloudMetrics = {
-  sparse_3d_point_count?: number;
-  dense_cloud_point_count?: number;
-  depth_provider?: string;
-  scale_note?: string;
-};
+import type { JobMetrics } from '@/lib/api';
 
-export default function PointCloudViewer({ jobId, apiBase, metrics }: { jobId: string; apiBase: string; metrics?: PointCloudMetrics }) {
+export default function PointCloudViewer({ jobId, apiBase, metrics }: { jobId: string; apiBase: string; metrics?: JobMetrics }) {
   const stats = [
     { label: 'Sparse points', value: metrics?.sparse_3d_point_count ?? 0 },
     { label: 'Dense points', value: metrics?.dense_cloud_point_count ?? 0 },

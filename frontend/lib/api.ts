@@ -28,6 +28,16 @@ export type JobMetrics = Record<string, any> & {
   quality_narrative?: QualityNarrative;
 };
 
+export type JobState = {
+  job_id: string;
+  status: 'queued' | 'running' | 'completed' | 'failed';
+  progress: number;
+  stage: string;
+  message?: string;
+  warnings?: string[];
+  error?: string | null;
+};
+
 export type TrajectoryPayload = {
   positions: number[][];
   poses?: Array<Record<string, any>>;
@@ -80,7 +90,7 @@ export async function startSampleJob(sampleName: string) {
 }
 
 export async function getJob(jobId: string) {
-  return readJson(`${API_BASE}/api/jobs/${jobId}`, 'Failed to load job');
+  return readJson<JobState>(`${API_BASE}/api/jobs/${jobId}`, 'Failed to load job');
 }
 
 export async function getMetrics(jobId: string) {
