@@ -1,21 +1,22 @@
 # Final Validation
 
-Generated: 2026-06-28T20:38:19.494275+00:00
+Generated: 2026-11-23T10:49:14+00:00
 
-This release was validated with source checks, demo generation, benchmark generation, bundle export, UI screenshot generation, frontend typecheck/build, and PDF render verification.
+This release was validated with source checks, demo generation, benchmark generation, bundle export, real-data screenshot generation, and frontend static structure checks. Frontend typecheck/build were attempted but remain blocked by an incomplete `npm ci` under Node 24/npm 11.
 
 ## Commands run
 
 ```bash
-python -m compileall backend vision_core workers scripts
-make test
-make demo
-make benchmark-demo
-make bundle-demo
-make screenshots
-cd frontend && npm install && npm run typecheck && npm run build
-make validate-final
-python /home/oai/skills/pdfs/scripts/render_pdf.py outputs/demo_job_synthetic/report.pdf --out_dir /mnt/data/scenemotion_final_pdf_render --dpi 140
+py -3.12 -m compileall backend vision_core workers scripts
+py -3.12 -m pytest tests -q
+py -3.12 scripts/run_demo_pipeline.py
+py -3.12 scripts/run_benchmark_demo.py
+py -3.12 scripts/run_bundle_demo.py
+py -3.12 scripts/generate_screenshots.py
+node scripts/check_frontend.mjs
+cd frontend && npm ci --no-audit --no-fund
+cd frontend && npm run typecheck
+cd frontend && npm run build
 ```
 
 ## Validation table
@@ -27,10 +28,11 @@ python /home/oai/skills/pdfs/scripts/render_pdf.py outputs/demo_job_synthetic/re
 | Demo pipeline | passed |
 | Benchmark demo | passed |
 | Bundle demo | passed |
-| Frontend typecheck | passed |
-| Frontend build | passed |
+| Frontend static check | passed |
+| Frontend typecheck | failed - incomplete npm install (`tsc` unavailable) |
+| Frontend build | failed - incomplete npm install (`next` unavailable) |
 | PDF report generated | True |
-| PDF render verification | passed - 2 pages rendered |
+| PDF render verification | generated PDF exists; external renderer not run on this Windows host |
 | Screenshots generated | True |
 | Artifact bundle generated | True |
 | Benchmark report generated | True |
@@ -41,12 +43,12 @@ python /home/oai/skills/pdfs/scripts/render_pdf.py outputs/demo_job_synthetic/re
 |---|---:|
 | Extracted frames | 16 |
 | Selected keyframes | 8 |
-| Avg keypoints/keyframe | 1638.125 |
-| Avg matches/pair | 532.5714285714286 |
-| Avg inlier ratio | 0.6680122740205736 |
+| Avg keypoints/keyframe | 1638.75 |
+| Avg matches/pair | 536.2857142857143 |
+| Avg inlier ratio | 0.6747085188644014 |
 | Valid pose pairs | 7 |
 | Rejected pairs | 0 |
-| Sparse 3D points | 3371 |
+| Sparse 3D points | 3468 |
 | Depth maps | 4 |
 | Dense cloud points | 4240 |
 | Loop candidates | 4 |
@@ -74,13 +76,13 @@ python /home/oai/skills/pdfs/scripts/render_pdf.py outputs/demo_job_synthetic/re
 - `outputs/benchmark_demo/benchmark_report.html`
 - `outputs/benchmark_demo/trajectory_plot.png`
 - `outputs/benchmark_demo/error_plot.png`
-- `outputs/final_validation/validation_summary.json`
+- `outputs/final_validation/validation_summary.json` (backend/artifact pass; frontend gates failed)
 - `docs/screenshots/*.png`
 
 ## Notes
 
-- `npm install` completed and reported 2 moderate dependency audit warnings from the frontend dependency tree. The release validation typecheck/build still passed.
-- The screenshots are generated UI preview assets unless a live browser capture workflow is added later.
+- `npm ci` stalled under Node 24/npm 11 and was stopped; direct typecheck/build then failed because the local frontend dependency tree was incomplete.
+- The screenshots are generated from the real demo artifacts, but are not live browser captures.
 - Monocular trajectory is relative scale by default.
 - Sim(3) alignment is evaluation-only.
 - Fallback pseudo-depth is not metric depth.

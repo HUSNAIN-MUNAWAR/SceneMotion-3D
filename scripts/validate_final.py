@@ -1,11 +1,13 @@
 from pathlib import Path
 import subprocess
 import json
+import sys
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'outputs' / 'final_validation'
 OUT.mkdir(parents=True, exist_ok=True)
+PYTHON = f'"{sys.executable}"'
 
 def run(cmd, cwd=ROOT, timeout=180):
     print(f'[validate-final] {cmd}', flush=True)
@@ -22,9 +24,9 @@ def exists(path):
     return (ROOT / path).exists()
 
 checks = {}
-checks['python_compile'] = run('python -m compileall backend vision_core workers scripts', timeout=120)
-checks['pytest'] = run('pytest tests -q', timeout=120)
-checks['screenshots'] = run('python scripts/generate_screenshots.py', timeout=60)
+checks['python_compile'] = run(f'{PYTHON} -m compileall backend vision_core workers scripts', timeout=120)
+checks['pytest'] = run(f'{PYTHON} -m pytest tests -q', timeout=120)
+checks['screenshots'] = run(f'{PYTHON} scripts/generate_screenshots.py', timeout=60)
 checks['frontend_static_check'] = run('node scripts/check_frontend.mjs', timeout=60)
 frontend_stamp = {}
 stamp_path = OUT / 'frontend_build_result.json'
@@ -43,7 +45,7 @@ artifact_checks = {
     'error_plot': exists('outputs/benchmark_demo/error_plot.png'),
     'screenshots': exists('docs/screenshots/landing_page.png') and exists('docs/screenshots/artifact_bundle.png'),
 }
-frontend_typecheck_passed = frontend_stamp.get('frontend_typecheck') == 'passed' or checks['frontend_static_check']['passed']
+frontend_typecheck_passed = frontend_stamp.get('frontend_typecheck') == 'passed'
 frontend_build_passed = frontend_stamp.get('frontend_build') == 'passed'
 summary = {
     'generated_at': datetime.now(timezone.utc).isoformat(),
@@ -61,8 +63,9 @@ summary = {
     'benchmark_report_generated': artifact_checks['benchmark_report'],
     'artifact_checks': artifact_checks,
     'frontend_build_stamp': frontend_stamp,
+    'frontend_static_check': 'passed' if checks['frontend_static_check']['passed'] else 'failed',
     'checks': checks,
-    'note': 'Frontend npm install/typecheck/build were run as explicit release commands and recorded in frontend_build_result.json. validate-final performs compile, pytest, screenshot, static frontend checks, and generated-artifact verification.'
+    'note': 'Frontend typecheck/build are accepted only from an explicit frontend_build_result.json stamp; validate-final performs interpreter-safe compile, pytest, screenshot, static frontend checks, and generated-artifact verification.'
 }
 (OUT / 'validation_summary.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')
 print(json.dumps(summary, indent=2))

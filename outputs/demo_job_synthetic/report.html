@@ -3,16 +3,16 @@
 <style>body{font-family:Inter,Arial,sans-serif;margin:40px;background:#0f172a;color:#e5e7eb}.card{background:#111827;border:1px solid #334155;border-radius:16px;padding:24px;box-shadow:0 10px 30px #0004}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #334155;text-align:left;padding:10px;vertical-align:top}th{width:320px;color:#bfdbfe}pre{white-space:pre-wrap;margin:0;color:#e5e7eb}.warn{background:#451a03;border:1px solid #fed7aa;border-radius:12px;padding:16px}.note{background:#172554;border:1px solid #60a5fa;border-radius:12px;padding:16px}</style>
 </head><body><div class='card'><h1>SceneMotion 3D Reconstruction Report</h1>
 <div class='note'><b>Scale disclaimer:</b> SceneMotion-3D estimates relative monocular trajectory by default. Absolute metric scale requires additional information such as known camera intrinsics, known object size, known camera height, stereo baseline, depth sensor, IMU, or ground-truth alignment for evaluation. Fallback pseudo-depth is provided for offline demonstration only and must not be interpreted as metric depth.</div>
-<h2>Metrics</h2><table><tr><th>video_path</th><td><pre>/mnt/data/SceneMotion-3D/sample_data/videos/synthetic_scene.mp4</pre></td></tr>
+<h2>Metrics</h2><table><tr><th>video_path</th><td><pre>E:\Github Profile Project Enhancment\SceneMotion-3D\sample_data\videos\synthetic_scene.mp4</pre></td></tr>
 <tr><th>number_of_frames</th><td><pre>48</pre></td></tr>
 <tr><th>extracted_frames</th><td><pre>16</pre></td></tr>
 <tr><th>selected_keyframes</th><td><pre>8</pre></td></tr>
-<tr><th>average_keypoints_per_keyframe</th><td><pre>1638.125</pre></td></tr>
-<tr><th>average_matches_per_pair</th><td><pre>532.5714285714286</pre></td></tr>
-<tr><th>average_inlier_ratio</th><td><pre>0.6680122740205736</pre></td></tr>
+<tr><th>average_keypoints_per_keyframe</th><td><pre>1638.75</pre></td></tr>
+<tr><th>average_matches_per_pair</th><td><pre>536.2857142857143</pre></td></tr>
+<tr><th>average_inlier_ratio</th><td><pre>0.6747085188644014</pre></td></tr>
 <tr><th>valid_pose_pairs</th><td><pre>7</pre></td></tr>
 <tr><th>rejected_pose_pairs</th><td><pre>0</pre></td></tr>
-<tr><th>sparse_3d_point_count</th><td><pre>3371</pre></td></tr>
+<tr><th>sparse_3d_point_count</th><td><pre>3468</pre></td></tr>
 <tr><th>mean_reprojection_error</th><td><pre>0.0</pre></td></tr>
 <tr><th>max_reprojection_error</th><td><pre>0.0</pre></td></tr>
 <tr><th>trajectory_length_relative_units</th><td><pre>7.0</pre></td></tr>
@@ -35,18 +35,18 @@
 <tr><th>loop_candidates</th><td><pre>4</pre></td></tr>
 <tr><th>loop_candidates_verified</th><td><pre>4</pre></td></tr>
 <tr><th>timing_profile</th><td><pre>{
-  &quot;frame_extraction_time&quot;: 0.149016,
-  &quot;keyframe_selection_time&quot;: 0.485727,
-  &quot;feature_extraction_time&quot;: 0.163268,
-  &quot;matching_time&quot;: 2.189775,
-  &quot;pose_estimation_time&quot;: 0.576971,
-  &quot;triangulation_time&quot;: 0.09645,
-  &quot;depth_estimation_time&quot;: 0.25363,
-  &quot;point_cloud_export_time&quot;: 0.098169
+  &quot;frame_extraction_time&quot;: 0.133375,
+  &quot;keyframe_selection_time&quot;: 0.125428,
+  &quot;feature_extraction_time&quot;: 0.410187,
+  &quot;matching_time&quot;: 3.125212,
+  &quot;pose_estimation_time&quot;: 8.299618,
+  &quot;triangulation_time&quot;: 0.089421,
+  &quot;depth_estimation_time&quot;: 0.6674,
+  &quot;point_cloud_export_time&quot;: 0.058239
 }</pre></td></tr>
 <tr><th>quality_narrative</th><td><pre>{
   &quot;reconstruction_quality_grade&quot;: &quot;strong&quot;,
-  &quot;tracking_stability&quot;: 0.6680122740205736,
+  &quot;tracking_stability&quot;: 0.6747085188644014,
   &quot;scale_mode&quot;: &quot;relative&quot;,
   &quot;likely_failure_reasons&quot;: [],
   &quot;recommended_fixes&quot;: [

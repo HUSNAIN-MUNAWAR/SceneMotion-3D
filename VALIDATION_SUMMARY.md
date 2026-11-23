@@ -1,24 +1,22 @@
 # Validation Summary - SceneMotion-3D Senior Upgrade
 
-Validation date: 2026-06-28
+Validation date: 2026-11-23
 
 ## Commands executed
 
 | Command | Result |
 |---|---|
-| `python -m compileall backend vision_core workers scripts` | Passed |
-| `pytest tests -q` | 17 passed |
-| `make test` | Passed, 17 tests |
-| `python - <<'PY' from backend.app.main import app ...` | Passed, backend imported with 25 routes |
-| `make demo` | Passed |
-| `make benchmark-demo` | Passed |
-| `make bundle-demo` | Passed |
-| `make screenshots` | Passed, 8 generated UI preview screenshots |
+| `py -3.12 -m compileall backend vision_core workers scripts` | Passed |
+| `py -3.12 -m pytest tests -q` | 17 passed |
+| `py -3.12 scripts/run_demo_pipeline.py` | Passed; real pipeline artifacts regenerated |
+| `py -3.12 scripts/run_benchmark_demo.py` | Passed; ATE/RPE artifacts regenerated |
+| `py -3.12 scripts/run_bundle_demo.py` | Passed; 4,502,490-byte ZIP generated |
+| `py -3.12 scripts/generate_screenshots.py` | Passed; 11 real-data PNGs regenerated |
 | `node scripts/check_frontend.mjs` | Passed |
-| `cd frontend && npm install` | Passed |
-| `cd frontend && npm run typecheck` | Passed |
-| `cd frontend && timeout 120s env NEXT_TELEMETRY_DISABLED=1 npm run build` | Passed |
-| PDF render verification with `/home/oai/skills/pdfs/scripts/render_pdf.py` | Passed, 2 pages rendered |
+| `cd frontend && npm ci --no-audit --no-fund` | Stalled under Node 24/npm 11 and was stopped; dependency tree remained incomplete |
+| `cd frontend && npm run typecheck` | Failed because `tsc` was unavailable after incomplete install |
+| `cd frontend && npm run build` | Failed because the `next` executable was unavailable after incomplete install |
+| `py -3.12 scripts/validate_final.py` | Expected non-zero release gate: backend/artifacts passed; frontend typecheck/build remained unavailable |
 
 ## Demo metrics
 
@@ -26,11 +24,11 @@ Validation date: 2026-06-28
 |---|---:|
 | Extracted frames | 16 |
 | Selected keyframes | 8 |
-| Average keypoints/keyframe | 1638.125 |
-| Average matches/pair | 532.5714 |
-| Average inlier ratio | 0.6680 |
+| Average keypoints/keyframe | 1638.75 |
+| Average matches/pair | 536.2857 |
+| Average inlier ratio | 0.6747 |
 | Valid pose pairs | 7 |
-| Sparse points | 3371 |
+| Sparse points | 3468 |
 | Depth maps | 4 |
 | Dense cloud points | 4240 |
 | Scale mode | relative |
@@ -65,4 +63,4 @@ Validation date: 2026-06-28
 
 ## Honest limitations preserved
 
-SceneMotion-3D estimates relative monocular trajectory by default. Absolute metric scale requires additional information such as known camera intrinsics, known object size, known camera height, stereo baseline, depth sensor, IMU, or ground-truth alignment for evaluation. Fallback pseudo-depth is provided for offline demonstration only and must not be interpreted as metric depth.
+SceneMotion-3D estimates relative monocular trajectory by default. Absolute metric scale requires additional information such as known camera intrinsics, known object size, known camera height, stereo baseline, depth sensor, IMU, or ground-truth alignment for evaluation. Fallback pseudo-depth is provided for offline demonstration only and must not be interpreted as metric depth. Frontend static structure is validated, but the frontend dependency installation/typecheck/build remains blocked by the incomplete npm install on this host.

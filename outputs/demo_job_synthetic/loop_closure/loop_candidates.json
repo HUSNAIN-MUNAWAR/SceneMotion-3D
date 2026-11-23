@@ -5,42 +5,42 @@
     {
       "query_frame": 4,
       "candidate_frame": 0,
-      "similarity": 0.9936360917248528,
+      "similarity": 0.9939964763333597,
       "verified": true,
       "reason": "ok",
-      "inliers": 296,
+      "inliers": 293,
       "raw_matches": 443,
-      "inlier_ratio": 0.6681715575620768
+      "inlier_ratio": 0.6613995485327314
     },
     {
       "query_frame": 5,
       "candidate_frame": 1,
-      "similarity": 0.998710920005536,
+      "similarity": 0.9988432820570567,
       "verified": true,
       "reason": "ok",
-      "inliers": 331,
-      "raw_matches": 526,
-      "inlier_ratio": 0.629277566539924
+      "inliers": 364,
+      "raw_matches": 543,
+      "inlier_ratio": 0.6703499079189686
     },
     {
       "query_frame": 6,
       "candidate_frame": 2,
-      "similarity": 0.9991531071757928,
+      "similarity": 0.9991302555610954,
       "verified": true,
       "reason": "ok",
-      "inliers": 421,
+      "inliers": 411,
       "raw_matches": 584,
-      "inlier_ratio": 0.7208904109589042
+      "inlier_ratio": 0.7037671232876712
     },
     {
       "query_frame": 7,
       "candidate_frame": 2,
-      "similarity": 0.9987142692142693,
+      "similarity": 0.998336648146408,
       "verified": true,
       "reason": "ok",
-      "inliers": 377,
-      "raw_matches": 549,
-      "inlier_ratio": 0.6867030965391621
+      "inliers": 379,
+      "raw_matches": 545,
+      "inlier_ratio": 0.6954128440366972
     }
   ],
   "note": "Lightweight candidate detection only; this is not a full loop-closure SLAM backend."

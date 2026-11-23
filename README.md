@@ -40,10 +40,10 @@ The bundled `demo_job_synthetic` run currently includes:
 
 - `16` extracted frames
 - `8` selected keyframes
-- `3,371` sparse 3D points
+- `3,468` sparse 3D points
 - `4,240` dense cloud points
 - `7` valid pose pairs
-- `0.668` average inlier ratio
+- `0.675` average inlier ratio
 - `4` verified loop candidates
 
 ## Screenshots
@@ -214,6 +214,8 @@ python scripts/generate_screenshots.py
 
 - `pytest tests -q`
 - `node scripts/check_frontend.mjs`
+
+On Windows, use `py -3.12` (or another installed Python 3.10+ interpreter) for the Python commands. The full release validator also checks generated artifacts; frontend typecheck/build require a completed `frontend/npm ci` install.
 
 ## Helpful Docs
 

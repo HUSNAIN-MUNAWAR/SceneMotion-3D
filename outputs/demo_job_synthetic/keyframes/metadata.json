@@ -1,70 +1,70 @@
 {
   "keyframe_paths": [
-    "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0000.jpg",
-    "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0001.jpg",
-    "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0002.jpg",
-    "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0003.jpg",
-    "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0004.jpg",
-    "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0005.jpg",
-    "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0006.jpg",
-    "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/keyframes/keyframe_0007.jpg"
+    "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\keyframes\\keyframe_0000.jpg",
+    "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\keyframes\\keyframe_0001.jpg",
+    "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\keyframes\\keyframe_0002.jpg",
+    "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\keyframes\\keyframe_0003.jpg",
+    "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\keyframes\\keyframe_0004.jpg",
+    "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\keyframes\\keyframe_0005.jpg",
+    "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\keyframes\\keyframe_0006.jpg",
+    "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\keyframes\\keyframe_0007.jpg"
   ],
   "count": 8,
   "stats": [
     {
-      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/frames/frame_00000.jpg",
-      "sharpness": 2008.028318452381,
+      "frame": "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\frames\\frame_00000.jpg",
+      "sharpness": 2008.1447916666666,
       "duplicate_score": 0.0,
       "motion_delta": 999.0,
       "accepted": true
     },
     {
-      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/frames/frame_00002.jpg",
-      "sharpness": 1995.2416592261904,
-      "duplicate_score": 0.9999911176269849,
-      "motion_delta": 6.054862351190476,
+      "frame": "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\frames\\frame_00002.jpg",
+      "sharpness": 1994.58390625,
+      "duplicate_score": 0.9999911638958002,
+      "motion_delta": 6.054884672619048,
       "accepted": true
     },
     {
-      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/frames/frame_00004.jpg",
-      "sharpness": 1972.8371205357143,
-      "duplicate_score": 0.9999921761095981,
-      "motion_delta": 5.284043898809524,
+      "frame": "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\frames\\frame_00004.jpg",
+      "sharpness": 1972.9351264880952,
+      "duplicate_score": 0.999991625112455,
+      "motion_delta": 5.28453869047619,
       "accepted": true
     },
     {
-      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/frames/frame_00006.jpg",
-      "sharpness": 1963.8503273809524,
-      "duplicate_score": 0.9999977804944364,
-      "motion_delta": 5.116026785714285,
+      "frame": "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\frames\\frame_00006.jpg",
+      "sharpness": 1964.060074404762,
+      "duplicate_score": 0.9999979743571913,
+      "motion_delta": 5.116116071428571,
       "accepted": true
     },
     {
-      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/frames/frame_00008.jpg",
-      "sharpness": 1985.783444940476,
-      "duplicate_score": 0.9999976594974552,
-      "motion_delta": 5.1628943452380955,
+      "frame": "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\frames\\frame_00008.jpg",
+      "sharpness": 1986.2914843749863,
+      "duplicate_score": 0.999997916038528,
+      "motion_delta": 5.1633370535714285,
       "accepted": true
     },
     {
-      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/frames/frame_00010.jpg",
-      "sharpness": 1976.4682045638797,
-      "duplicate_score": 0.9999978097566216,
-      "motion_delta": 5.259196428571428,
+      "frame": "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\frames\\frame_00010.jpg",
+      "sharpness": 1976.3031227410622,
+      "duplicate_score": 0.9999981767913428,
+      "motion_delta": 5.258831845238095,
       "accepted": true
     },
     {
-      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/frames/frame_00012.jpg",
-      "sharpness": 1960.0878050327292,
-      "duplicate_score": 0.9999986209046056,
-      "motion_delta": 5.075040922619047,
+      "frame": "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\frames\\frame_00012.jpg",
+      "sharpness": 1960.3858556347766,
+      "duplicate_score": 0.9999987172189944,
+      "motion_delta": 5.074813988095238,
       "accepted": true
     },
     {
-      "frame": "/mnt/data/SceneMotion-3D/outputs/demo_job_synthetic/frames/frame_00014.jpg",
-      "sharpness": 1926.6927645337164,
-      "duplicate_score": 0.9999999075444244,
-      "motion_delta": 4.926923363095238,
+      "frame": "E:\\Github Profile Project Enhancment\\SceneMotion-3D\\outputs\\demo_job_synthetic\\frames\\frame_00014.jpg",
+      "sharpness": 1926.8019312569618,
+      "duplicate_score": 0.9999999070479076,
+      "motion_delta": 4.92546875,
       "accepted": true
     }
   ]
