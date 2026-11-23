@@ -349,6 +349,51 @@ def save_pointcloud():
     img.save(OUT / "pointcloud_viewer.png")
 
 
+def save_trajectory():
+    """Render a trajectory-focused view from the exported trajectory JSON."""
+    img, draw = canvas(
+        "Recovered camera trajectory",
+        "Relative camera poses plotted directly from the shipped trajectory artifact.",
+        "Trajectory Viewer",
+    )
+    plot = ImageOps.fit(render_trajectory_plot(), (930, 620), method=Image.Resampling.LANCZOS)
+    paste_rounded(img, plot, (96, 334), radius=30)
+    stat_card(draw, (1070, 334, 1484, 500), "Valid pose pairs", format_number(METRICS["valid_pose_pairs"]), accent=BLUE)
+    stat_card(draw, (1070, 526, 1484, 692), "Relative path length", format_number(TRAJECTORY["trajectory_length_relative"]), accent=CYAN)
+    text_card(draw, (1070, 718, 1484, 884), "Scale note", TRAJECTORY["scale_note"], accent=AMBER)
+    img.save(OUT / "trajectory_viewer.png")
+
+
+def save_dashboard_snapshot():
+    """Render a compact run snapshot instead of copying the full dashboard."""
+    img, draw = canvas(
+        "Completed run snapshot",
+        "A compact evidence card assembled from the same measured demo output bundle.",
+        "Run Snapshot",
+    )
+    rounded_box(draw, (96, 334, 1484, 884), fill=CARD)
+    draw.text((128, 370), "demo_job_synthetic", fill=TEXT, font=FONT_MD)
+    draw.text((128, 418), "Shipped output bundle · synthetic input · relative monocular scale", fill=MUTED, font=FONT_SM)
+    snapshot = [
+        ("Frames", format_number(METRICS["extracted_frames"]), BLUE),
+        ("Keyframes", format_number(METRICS["selected_keyframes"]), CYAN),
+        ("Pose pairs", format_number(METRICS["valid_pose_pairs"]), GREEN),
+        ("Sparse points", format_number(METRICS["sparse_3d_point_count"]), GREEN),
+        ("Dense points", format_number(METRICS["dense_cloud_point_count"]), CYAN),
+        ("Loop candidates", format_number(METRICS["loop_candidates_verified"]), AMBER),
+    ]
+    x = 128
+    y = 500
+    for index, (label, value, accent) in enumerate(snapshot):
+        stat_card(draw, (x, y, x + 392, y + 142), label, value, accent=accent)
+        x += 424
+        if (index + 1) % 3 == 0:
+            x = 128
+            y += 170
+    draw.text((128, 824), "Source: outputs/demo_job_synthetic/metrics.json + trajectory.json", fill=MUTED, font=FONT_XS)
+    img.save(OUT / "dashboard_snapshot.png")
+
+
 def save_benchmark():
     img, draw = canvas(
         "Benchmark-style report view",
@@ -446,14 +491,20 @@ def save_artifact_bundle():
     img.save(OUT / "artifact_bundle.png")
 
 
-def write_aliases():
-    aliases = {
-        "dashboard.png": "reconstruction_dashboard.png",
-        "trajectory_viewer.png": "pointcloud_viewer.png",
-        "dashboard_snapshot.png": "reconstruction_dashboard.png",
-    }
-    for alias, target in aliases.items():
-        (OUT / alias).write_bytes((OUT / target).read_bytes())
+def save_legacy_dashboard():
+    """Keep the legacy dashboard filename as an independent timing view."""
+    img, draw = canvas(
+        "Run health overview",
+        "Stage timings and quality signals from the completed demo pipeline.",
+        "Dashboard Overview",
+    )
+    timing = ImageOps.fit(render_timing_plot(), (930, 500), method=Image.Resampling.LANCZOS)
+    paste_rounded(img, timing, (96, 334), radius=30)
+    stat_card(draw, (1070, 334, 1484, 476), "Average inlier ratio", f"{METRICS['average_inlier_ratio']:.3f}", accent=GREEN)
+    stat_card(draw, (1070, 502, 1484, 644), "Depth maps", format_number(METRICS["depth_maps_generated"]), accent=CYAN)
+    stat_card(draw, (1070, 670, 1484, 812), "Warnings", format_number(len(METRICS["warnings"])), accent=AMBER)
+    draw.text((1070, 844), "Measured values · no placeholder KPIs", fill=MUTED, font=FONT_XS)
+    img.save(OUT / "dashboard.png")
 
 
 def main():
@@ -464,11 +515,13 @@ def main():
     save_matches()
     save_depth()
     save_pointcloud()
+    save_trajectory()
+    save_dashboard_snapshot()
     save_benchmark()
     save_run_comparison()
     save_pdf_preview()
     save_artifact_bundle()
-    write_aliases()
+    save_legacy_dashboard()
     print(f"Generated real-data screenshot assets in {OUT}")
 
 
