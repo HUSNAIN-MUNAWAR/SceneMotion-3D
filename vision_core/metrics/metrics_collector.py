@@ -23,6 +23,8 @@ def collect_warnings(metrics: dict) -> list[str]:
 
 def save_metrics(metrics: dict, output_path: str | Path) -> dict:
     metrics = dict(metrics)
-    metrics["warnings"] = collect_warnings(metrics)
+    # Preserve runtime warnings (for example an unavailable optional visualizer)
+    # alongside deterministic quality warnings instead of silently replacing them.
+    metrics["warnings"] = sorted(set(metrics.get("warnings", [])) | set(collect_warnings(metrics)))
     Path(output_path).write_text(json.dumps(metrics, indent=2), encoding="utf-8")
     return metrics

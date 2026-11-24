@@ -32,6 +32,7 @@ def _progress(cb, p, stage, msg=""):
 def run_pipeline_job(video_path: str | Path, output_dir: str | Path, config: dict | None = None, progress_cb=None) -> dict:
     config = config or {}
     timer = StageTimer()
+    runtime_warnings: list[str] = []
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
@@ -58,8 +59,8 @@ def run_pipeline_job(video_path: str | Path, output_dir: str | Path, config: dic
     for i, fp in enumerate(kf["keyframe_paths"][:4]):
         try:
             visualize_keypoints(fp, str(output_dir / "features" / f"keypoints_{i:04d}.jpg"), feat["method"])
-        except Exception:
-            pass
+        except Exception as exc:
+            runtime_warnings.append(f"Keypoint visualization {i} unavailable: {exc}")
 
     _progress(progress_cb, 45, "matching", "Matching adjacent keyframes")
     with timer.stage("matching_time"):
@@ -127,6 +128,7 @@ def run_pipeline_job(video_path: str | Path, output_dir: str | Path, config: dic
         "loop_candidates": int(loop_candidates.get("candidate_count", 0)),
         "loop_candidates_verified": int(loop_candidates.get("verified_count", 0)),
         "timing_profile": timer.summary(),
+        "warnings": runtime_warnings,
     }
     metrics["quality_narrative"] = build_quality_narrative(metrics)
     metrics = save_metrics(metrics, output_dir / "metrics.json")
@@ -156,12 +158,15 @@ def run_pipeline_job(video_path: str | Path, output_dir: str | Path, config: dic
     try:
         registry = RunRegistry(output_dir.parent)
         registry.register_run(config, metrics, artifacts, metrics.get("warnings", []), metrics.get("timing_profile", {}))
-    except Exception:
-        pass
+    except Exception as exc:
+        runtime_warnings.append(f"Run registry unavailable: {exc}")
     try:
         artifacts["bundle"] = str(Path(create_artifact_bundle(output_dir)).relative_to(output_dir))
         (output_dir / "artifacts.json").write_text(json.dumps(artifacts, indent=2), encoding="utf-8")
-    except Exception:
-        pass
+    except Exception as exc:
+        runtime_warnings.append(f"Artifact bundle unavailable: {exc}")
+    if runtime_warnings:
+        metrics["warnings"] = sorted(set(metrics.get("warnings", [])) | set(runtime_warnings))
+        save_metrics(metrics, output_dir / "metrics.json")
     _progress(progress_cb, 100, "completed", "Pipeline completed")
     return metrics

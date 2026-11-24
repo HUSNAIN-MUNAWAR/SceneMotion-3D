@@ -6,9 +6,10 @@ from vision_core.metrics.metrics_collector import save_metrics
 
 
 def test_metrics_json_generation(tmp_path):
-    metrics = save_metrics({'selected_keyframes': 1, 'average_keypoints_per_keyframe': 10, 'intrinsics_source': 'estimated'}, tmp_path/'metrics.json')
+    metrics = save_metrics({'selected_keyframes': 1, 'average_keypoints_per_keyframe': 10, 'intrinsics_source': 'estimated', 'warnings': ['runtime evidence unavailable']}, tmp_path/'metrics.json')
     assert (tmp_path/'metrics.json').exists()
     assert metrics['warnings']
+    assert 'runtime evidence unavailable' in metrics['warnings']
 
 
 def test_health_endpoint():
